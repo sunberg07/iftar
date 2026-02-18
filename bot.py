@@ -1,8 +1,7 @@
 import requests
-import os
+import time
 
-TOKEN = os.getenv("BOT_TOKEN")
-CHAT_ID = os.getenv("CHAT_ID")
+print("BOT BAŞLADI")
 
 def send_message(text):
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
@@ -12,4 +11,7 @@ def send_message(text):
     }
     requests.post(url, data=data)
 
-send_message("🤖 Bot çalışıyor! Telegram bağlantısı başarılı ✅")
+send_message("Bot Railway'de aktif 🟢")
+
+while True:
+    time.sleep(60)
